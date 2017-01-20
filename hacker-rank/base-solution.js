@@ -1,7 +1,8 @@
-let main = main || function (){}; // eslint-disable-line
+let _main = main || function (){}; // eslint-disable-line
 
 function processData(input) {
-  main(input);
+  const lines = input.split('\n');
+  _main(lines);
 }
 
 let input = '';
