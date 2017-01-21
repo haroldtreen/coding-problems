@@ -6,8 +6,8 @@ function rotateLeft(arr) {
   arr.push(el);
 }
 
-function main(input) {
-  const lines = input.split('\n').map(line => line.split(' ').map(Number));
+function main(lines) {
+  lines = lines.map(line => line.split(' ').map(Number)); // eslint-disable-line
   const d = lines[0][1];
 
   lines.shift();
