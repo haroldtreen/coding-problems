@@ -104,7 +104,7 @@ class MedianList {
 
 function main(lines) {
   lines.shift();
-  lines = lines.filter(l => l); // eslint-disable-line
+  lines = lines.filter(l => l !== ''); // eslint-disable-line
   const outputs = [];
 
   const medianList = new MedianList();

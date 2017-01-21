@@ -3,7 +3,7 @@ const fs = require('fs');
 class Utils {
   static loadInputLines(filename, i) {
     const input = filename.replace(/\.js/, `-input-${i}.txt`);
-    return fs.readFileSync(input).toString().split('\n').filter(l => l !== '');
+    return fs.readFileSync(input).toString().split('\n');
   }
 
   static loadOutputLines(filename, i) {
