@@ -1,5 +1,4 @@
 const OPENING_BRACKET = { '[': true, '{': true, '(': true };
-const CLOSING_BRACKET = { ']': true, '}': true, ')': true };
 const PAIRS = { '(': ')', '{': '}', '[': ']' };
 
 function isBalanced(str) {
