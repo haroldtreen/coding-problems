@@ -21,7 +21,9 @@
     "test": "jest"
   },
   "jest": {
-    "testRegex": "-tests.js"
+    "testRegex": "-tests.js",
+    "verbose": true,
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
