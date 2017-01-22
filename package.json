@@ -21,7 +21,7 @@
     "test": "jest"
   },
   "jest": {
-    "testRegex": "tests.js"
+    "testRegex": "-tests.js"
   },
   "repository": {
     "type": "git",
