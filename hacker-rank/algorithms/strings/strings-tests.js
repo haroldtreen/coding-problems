@@ -1,8 +1,34 @@
 const utils = require('../../../helpers/js-utils');
 const twoCharacters = require('./two-characters');
 const richieRich = require('./richie-rich');
+const sherlockAndAnagrams = require('./sherlock-and-anagrams');
 
 describe('Strings', () => {
+  describe('sherlock-and-anagrams', () => {
+    it('solves example 1', () => {
+      const example = [
+        '2',
+        'abba',
+        'abcd',
+      ];
+      const output = ['4', '0'];
+      expect(sherlockAndAnagrams(example)).toEqual(output);
+    });
+
+    it('solves example 2', () => {
+      const example = [
+        '5',
+        'ifailuhkqq',
+        'hucpoltgty',
+        'ovarjsnrbf',
+        'pvmupwjjjf',
+        'iwwhrlkpek',
+      ]
+      const output = ['3', '2', '2', '6', '3'];
+      expect(sherlockAndAnagrams(example)).toEqual(output);
+    })
+  });
+
   describe('two-characters', () => {
     it('solves example 1', () => {
       const example = [
