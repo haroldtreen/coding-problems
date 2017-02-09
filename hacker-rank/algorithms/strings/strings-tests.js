@@ -2,8 +2,18 @@ const utils = require('../../../helpers/js-utils');
 const twoCharacters = require('./two-characters');
 const richieRich = require('./richie-rich');
 const sherlockAndAnagrams = require('./sherlock-and-anagrams');
+const marsExploration = require('./mars-exploration');
 
 describe('Strings', () => {
+  describe('mars-exploration', () => {
+    it('solves example 1', () => {
+      const example = ['SOSSPSSQSSOR'];
+      const output = [3];
+
+      expect(marsExploration(example)).toEqual(output);
+    });
+  });
+
   describe('sherlock-and-anagrams', () => {
     it('solves example 1', () => {
       const example = [
