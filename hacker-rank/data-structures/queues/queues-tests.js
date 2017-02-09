@@ -1,8 +1,44 @@
 const queueUsingTwoStacks = require('./queue-using-two-stacks');
 const castleOnTheGrid = require('./castle-on-the-grid');
+const Queue = require('./queue');
 const utils = require('../../../helpers/js-utils');
 
 describe('queues', () => {
+  describe('queue', () => {
+    it('explodes when full', () => {
+      const queue = new Queue(1);
+      queue.enqueue(1);
+      expect(() => {
+        queue.enqueue(2);
+      }).toThrow();
+    });
+
+    it('explodes when empty', () => {
+      const queue = new Queue(1);
+      queue.enqueue(1);
+      queue.dequeue();
+
+      expect(() => { queue.dequeue(); }).toThrow();
+    });
+
+    it('queues the right things', () => {
+      const queue = new Queue(3);
+
+      Array.apply(null, { length: 10 }).forEach((_, i) => {
+        queue.enqueue(i);
+        expect(queue.dequeue()).toEqual(i);
+      });
+
+      queue.enqueue(1);
+      queue.enqueue(2);
+      queue.enqueue(3);
+
+      expect(queue.dequeue()).toEqual(1);
+      expect(queue.dequeue()).toEqual(2);
+      expect(queue.dequeue()).toEqual(3);
+    });
+  });
+
   describe('castle-on-the-grid', () => {
     const modulePath = require.resolve('./castle-on-the-grid');
 
