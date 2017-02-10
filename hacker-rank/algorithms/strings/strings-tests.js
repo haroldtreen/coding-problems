@@ -3,8 +3,22 @@ const twoCharacters = require('./two-characters');
 const richieRich = require('./richie-rich');
 const sherlockAndAnagrams = require('./sherlock-and-anagrams');
 const marsExploration = require('./mars-exploration');
+const gemstones = require('./gemstones');
 
 describe('Strings', () => {
+  describe('gemstones', () => {
+    it('solves example 1', () => {
+        const example = [
+          '3',
+          'abcdde',
+          'baccd',
+          'eeabg',
+        ];
+        const output = ['2'];
+        expect(gemstones(example)).toEqual(output);
+    });
+  })
+
   describe('mars-exploration', () => {
     it('solves example 1', () => {
       const example = ['SOSSPSSQSSOR'];
