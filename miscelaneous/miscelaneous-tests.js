@@ -1,8 +1,39 @@
 const stringPatterns = require('./string-patterns');
 const mergeSorted = require('./merge-sorted');
 const spiralArray = require('./spiral-matrix-traversal');
+const consecutiveSum = require('./consecutive-sum');
 
 describe('Miscelaneous', () => {
+  describe('largest-consecutive-sum', () => {
+    it('finds the largest consecutive sum', () => {
+      const example = [1, 3, 4, 0, 100, 1, -10, 1];
+      const output = 109;
+
+      expect(consecutiveSum(example)).toEqual(output);
+    });
+
+    it('finds the largest consecutive negative sum', () => {
+      const example = [-1, -3, -4];
+      const output = -1;
+
+      expect(consecutiveSum(example)).toEqual(output);
+    });
+
+    it('finds the largest consecutive positive sum', () => {
+      const example = [1, 3, 10];
+      const output = 14;
+
+      expect(consecutiveSum(example)).toEqual(output);
+    });
+
+    it('finds the largest consecutive mixed sum', () => {
+      const example = [13, 10, -23, 100, -37, 10, 37, -10, 120];
+      const output = 220;
+
+      expect(consecutiveSum(example)).toEqual(output);
+    });
+  });
+
   describe('merge-sorted', () => {
     it('merges two sorted lists', () => {
       const n = [1, 3, 6, 8];
