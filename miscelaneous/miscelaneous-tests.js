@@ -2,8 +2,39 @@ const stringPatterns = require('./string-patterns');
 const mergeSorted = require('./merge-sorted');
 const spiralArray = require('./spiral-matrix-traversal');
 const consecutiveSum = require('./consecutive-sum');
+const kClosest = require('./k-closest-neighbours');
 
 describe('Miscelaneous', () => {
+  describe('k-closest-neighbours', () => {
+    it('finds the k closest points', () => {
+      const points = [
+        { x: 6, y: 7 },
+        { x: 1, y: 1 },
+        { x: 2, y: 2 },
+        { x: 2, y: 3 },
+        { x: 3, y: 2 },
+        { x: 4, y: 4 },
+      ];
+
+      const neighbours = kClosest(3, points);
+      expect(neighbours.length).toEqual(3);
+      expect(neighbours[0]).toEqual({ x: 1, y: 1 });
+      expect(neighbours[2]).toEqual({ x: 2, y: 3 });
+    });
+
+    it('finds the k closest points', () => {
+      const points = [
+        { x: 2, y: 2 },
+        { x: 3, y: 2 },
+        { x: 4, y: 4 },
+      ];
+
+      const neighbours = kClosest(3, points);
+      expect(neighbours.length).toEqual(3);
+      expect(neighbours).toEqual(points);
+    });
+  });
+
   describe('largest-consecutive-sum', () => {
     it('finds the largest consecutive sum', () => {
       const example = [1, 3, 4, 0, 100, 1, -10, 1];
