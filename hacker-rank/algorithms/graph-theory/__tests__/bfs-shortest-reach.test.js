@@ -1,5 +1,5 @@
-const utils = require('../../../helpers/js-utils');
-const bfsShortestReach = require('./bfs-shortest-reach');
+const utils = require('../../../../helpers/js-utils');
+const bfsShortestReach = require('../bfs-shortest-reach');
 
 describe('Graph Theory', () => {
   describe('bfs-shortest-reach', () => {

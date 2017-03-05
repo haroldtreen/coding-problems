@@ -21,8 +21,7 @@
     "test": "jest"
   },
   "jest": {
-    "testRegex": ".*-tests.js",
-    "verbose": true,
+    "testRegex": ".*-?tests?.js",
     "testEnvironment": "node"
   },
   "repository": {
