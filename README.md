@@ -1,5 +1,7 @@
 # Coding Problems
 
+[![Build Status](https://travis-ci.org/haroldtreen/coding-problems.svg?branch=master)](https://travis-ci.org/haroldtreen/coding-problems)
+
 A place to track all the coding problems I do.
 
 ### Install
