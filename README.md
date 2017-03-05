@@ -20,9 +20,11 @@ npm test
 
 ### Structure
 
+#### `/hacker-rank`
+
 Each coding problem should export a `main` function.
 
-#### `main(inputLines) -> outputLines`
+##### `main(inputLines) -> outputLines`
 
 - `inputLines`: An array of strings from std.in.
 - `outputLines`: An array of strings to send to std.out.
