@@ -4,9 +4,6 @@
   "description": "Coding problems",
   "main": "index.js",
   "private": true,
-  "dependencies": {
-    "eslint": "^3.13.1"
-  },
   "devDependencies": {
     "chai": "^3.5.0",
     "editorconfig": "^0.13.2",
