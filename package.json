@@ -15,10 +15,10 @@
     "jest": "^18.1.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "$(npm bin)/jest"
   },
   "jest": {
-    "testRegex": ".*-?tests?.js",
+    "testRegex": ".*-?(test|spec)s?.js",
     "testEnvironment": "node"
   },
   "repository": {
