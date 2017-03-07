@@ -3,7 +3,7 @@ class DynamicArray {
   constructor(n) {
     this.n = n;
     this.lastAns = 0;
-    this.seqs = Array.apply(null, { length: n }).map(() => []);
+    this.seqs = Array(...{ length: n }).map(() => []);
   }
 
   update(x, y) {

@@ -4,120 +4,120 @@ const inputData = fs.readFileSync('./input10.txt', 'utf-8');
 // const outputDate = fs.readFileSync('./output10.txt', 'utf-8');
 
 class Stack {
-    constructor() {
-        this.data = [];
-    }
+  constructor() {
+    this.data = [];
+  }
 
-    push(el) {
-        this.data.push(el);
-    }
+  push(el) {
+    this.data.push(el);
+  }
 
-    pop(el) {
-        return this.data.pop(el);
-    }
+  pop(el) {
+    return this.data.pop(el);
+  }
 
-    getData() {
-        return this.data;
-    }
+  getData() {
+    return this.data;
+  }
 }
 
 const getValues = function getValues(line) {
-    return line.split(' ').map(Number);
+  return line.split(' ').map(Number);
 };
 
 function removeEdge(graph, edge) {
-    const srcIdx = graph[edge.src].neighbours.indexOf(graph[edge.dest]);
-    graph[edge.src].neighbours.splice(srcIdx, 1);
+  const srcIdx = graph[edge.src].neighbours.indexOf(graph[edge.dest]);
+  graph[edge.src].neighbours.splice(srcIdx, 1);
 
-    return graph;
+  return graph;
 }
 
 function addEdge(graph, edge) {
-    graph[edge.src].neighbours.push(graph[edge.dest]);
-    return graph;
+  graph[edge.src].neighbours.push(graph[edge.dest]);
+  return graph;
 }
 
 
 const buildGraph = function buildGraph(values, edges) {
-    let graph = values.map((value, index) => ({ index, value, neighbours: [] }));
-    edges.forEach((edge) => {
-        graph = addEdge(graph, edge);
-    });
+  let graph = values.map((value, index) => ({ index, value, neighbours: [] }));
+  edges.forEach((edge) => {
+    graph = addEdge(graph, edge);
+  });
 
-    return graph;
+  return graph;
 };
 
 const addNeighbours = function addNeighbours(stack, node, graph, visited) {
-    node.neighbours.forEach((edge) => {
-        const neighbour = graph[edge.src];
-        if (!visited[neighbour.index]) {
-            visited[neighbour.index] = true;
-            stack.push(graph[neighbour.index]);
-        }
-    });
+  node.neighbours.forEach((edge) => {
+    const neighbour = graph[edge.src];
+    if (!visited[neighbour.index]) {
+      visited[neighbour.index] = true;
+      stack.push(graph[neighbour.index]);
+    }
+  });
 };
 
 let total;
 
 function calculateSum(start, graph, limit) {
-    const stack = new Stack();
-    const visited = {};
-    let sum = 0;
+  const stack = new Stack();
+  const visited = {};
+  let sum = 0;
 
-    stack.push(start);
-    while (stack.getData().length > 0) {
-        const node = stack.pop();
-        sum += node.value;
+  stack.push(start);
+  while (stack.getData().length > 0) {
+    const node = stack.pop();
+    sum += node.value;
 
-        if ((2 * sum) - total >= limit) {
-            return sum;
-        }
-
-        if (node.neighbours.length > 0) {
-            addNeighbours(stack, node, graph, visited);
-        }
+    if ((2 * sum) - total >= limit) {
+      return sum;
     }
-    return sum;
+
+    if (node.neighbours.length > 0) {
+      addNeighbours(stack, node, graph, visited);
+    }
+  }
+  return sum;
 }
 
 function toKey(obj) {
-    return `${obj.src}|${obj.dest}`;
+  return `${obj.src}|${obj.dest}`;
 }
 
 function pushEdges(stack, node, visited) {
-    node.neighbours.forEach((edge) => {
-        if (!visited[toKey(edge)]) {
-            visited[toKey(edge)] = true;
-            stack.push(edge);
-        }
-    });
+  node.neighbours.forEach((edge) => {
+    if (!visited[toKey(edge)]) {
+      visited[toKey(edge)] = true;
+      stack.push(edge);
+    }
+  });
 }
 
 function main(values, edges) {
-    total = values.reduce((sum, val) => sum + val, 0);
-    const graph = buildGraph(values, edges);
-    const visited = {};
-    let minDiff = total;
-    const stack = new Stack();
-    let iters = 0;
+  total = values.reduce((sum, val) => sum + val, 0);
+  const graph = buildGraph(values, edges);
+  const visited = {};
+  const minDiff = total;
+  const stack = new Stack();
+  const iters = 0;
 
-    calculateSums(graph[0], graph, minDiff);
+  calculateSums(graph[0], graph, minDiff);
 
-    console.log(minDiff);
+  console.log(minDiff);
 }
 
 const processData = function processData(input) {
-    const lines = input.split('\n');
-    const values = getValues(lines[1]);
-    const edges = [];
-    for (let i = 2; i < lines.length; i += 1) {
-        const v = getValues(lines[i]);
+  const lines = input.split('\n');
+  const values = getValues(lines[1]);
+  const edges = [];
+  for (let i = 2; i < lines.length; i += 1) {
+    const v = getValues(lines[i]);
 
-        const src = Math.min(v[0] - 1, v[1] - 1);
-        const dest = Math.max(v[0] - 1, v[1] - 1);
-        edges.push({ src, dest });
-    }
-    main(values, edges);
+    const src = Math.min(v[0] - 1, v[1] - 1);
+    const dest = Math.max(v[0] - 1, v[1] - 1);
+    edges.push({ src, dest });
+  }
+  main(values, edges);
 };
 
 

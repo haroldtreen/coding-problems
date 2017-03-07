@@ -1,17 +1,17 @@
-var HelloWorld = require('./hello-world');
+const HelloWorld = require('./hello-world');
 
-describe('Hello World', function() {
-  var helloWorld = new HelloWorld();
+describe('Hello World', () => {
+  const helloWorld = new HelloWorld();
 
-  it('says hello world with no name', function() {
+  it('says hello world with no name', () => {
     expect(helloWorld.hello('')).toEqual('Hello, World!');
   });
 
-  xit('says hello to bob', function() {
+  xit('says hello to bob', () => {
     expect(helloWorld.hello('Bob')).toEqual('Hello, Bob!');
   });
 
-  xit('says hello to sally', function() {
+  xit('says hello to sally', () => {
     expect(helloWorld.hello('Sally')).toEqual('Hello, Sally!');
   });
 });

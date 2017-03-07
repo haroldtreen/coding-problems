@@ -7,7 +7,7 @@ function bubbleSort(arr) {
       if (arr[i] > arr[i + 1]) {
         numSwaps += 1;
         const tmp = arr[i];
-        arr[i] = arr[i + 1]
+        arr[i] = arr[i + 1];
         arr[i + 1] = tmp;
       }
     }
@@ -17,7 +17,7 @@ function bubbleSort(arr) {
   return { array: arr, numSwaps };
 }
 
-function main (lines) {
+function main(lines) {
   lines.shift();
   const arr = lines[0].split(' ').map(Number);
   const results = bubbleSort(arr);

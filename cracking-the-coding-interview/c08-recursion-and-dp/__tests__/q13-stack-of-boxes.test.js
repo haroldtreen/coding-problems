@@ -1,4 +1,5 @@
-const stackOfBoxes = require('../stack-of-boxes');
+const solutionInfo = require('../../test-helpers').solutionInfo(__filename);
+const stackOfBoxes = require(solutionInfo.filename);
 
 describe('Stack of boxes', () => {
   it('handles a single box', () => {
@@ -6,5 +7,5 @@ describe('Stack of boxes', () => {
     const maxHeight = stackOfBoxes([box]);
 
     expect(maxHeight).toEqual(box.height);
-  })
-})
+  });
+});

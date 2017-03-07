@@ -55,7 +55,7 @@ function toEdgeDistances(graph) {
 
 function main(lines) {
   const graphs = buildGraphs(lines);
-  return graphs.map(toEdgeDistances).map((dist) => dist.join(' '));
+  return graphs.map(toEdgeDistances).map(dist => dist.join(' '));
 }
 
 module.exports = main;

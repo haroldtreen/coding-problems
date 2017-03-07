@@ -1,9 +1,7 @@
 function main(lines) {
   lines.shift();
 
-  const charSets = lines.map((l) => {
-    return new Set(l.split(''));
-  });
+  const charSets = lines.map(l => new Set(l.split('')));
 
   const gemstones = charSets.reduce((gemstoneSet, set) => {
     const values = gemstoneSet.values();

@@ -50,8 +50,8 @@ function longestT(str) { // String with two repeating characters
 }
 
 function main(lines) {
-    lines.shift();
-    return [longestT(lines.shift()).toString()];
+  lines.shift();
+  return [longestT(lines.shift()).toString()];
 }
 
 module.exports = main;

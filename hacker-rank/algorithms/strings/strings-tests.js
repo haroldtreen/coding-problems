@@ -8,16 +8,16 @@ const gemstones = require('./gemstones');
 describe('Strings', () => {
   describe('gemstones', () => {
     it('solves example 1', () => {
-        const example = [
-          '3',
-          'abcdde',
-          'baccd',
-          'eeabg',
-        ];
-        const output = ['2'];
-        expect(gemstones(example)).toEqual(output);
+      const example = [
+        '3',
+        'abcdde',
+        'baccd',
+        'eeabg',
+      ];
+      const output = ['2'];
+      expect(gemstones(example)).toEqual(output);
     });
-  })
+  });
 
   describe('mars-exploration', () => {
     it('solves example 1', () => {
@@ -47,10 +47,10 @@ describe('Strings', () => {
         'ovarjsnrbf',
         'pvmupwjjjf',
         'iwwhrlkpek',
-      ]
+      ];
       const output = ['3', '2', '2', '6', '3'];
       expect(sherlockAndAnagrams(example)).toEqual(output);
-    })
+    });
   });
 
   describe('two-characters', () => {

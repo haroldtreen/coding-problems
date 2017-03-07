@@ -2,20 +2,27 @@
   "name": "coding-problems",
   "version": "0.0.0",
   "description": "Coding problems",
-  "main": "index.js",
   "private": true,
   "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-jest": "^19.0.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
     "chai": "^3.5.0",
     "editorconfig": "^0.13.2",
-    "eslint": "^3.13.1",
-    "eslint-config-airbnb": "^14.0.0",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^3.0.2",
-    "eslint-plugin-react": "^6.9.0",
-    "jest": "^18.1.0"
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "jest-cli": "^19.0.2"
   },
   "scripts": {
     "test": "$(npm bin)/jest"
+  },
+  "babel": {
+    "plugins": [
+      "transform-es2015-modules-commonjs"
+    ]
   },
   "jest": {
     "testRegex": ".*-?(test|spec)s?.js",
